@@ -1,0 +1,225 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ZaksCms.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+ 
+    <link rel="stylesheet" href="assets/css/Site.css" />
+    <link rel="stylesheet" href="assets/css/icons.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link href="assets/css/select2.min.css" rel="stylesheet" />
+    <script src="/assets/js/select2.min.js" type="text/x-jquery-tmpl"></script>
+      <link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="/css/datatables.min.css" rel="stylesheet" />
+   <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder> 
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script src="/ckeditor/adapters/jquery.js"></script>
+</head>
+<body>
+ 
+
+
+    <form id="form1" runat="server">
+           <div class="wrapper">
+      
+               <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Zak's CMS</h3>
+                <strong><i class="fa fa-align-justify"></i></strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        User
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="/Register">Add User</a>
+                        </li>
+                        <li>
+                            <a href="/ListUsers">View Users</a>
+                        </li>
+                        <li>
+                            <a href="/RecoverPassword">Change Password</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="mdi mdi-pen"></i>
+                        Content
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="/AddContent">Add Content</a>
+                        </li>
+                        <li>
+                            <a href="/ListContent">List Content</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                     <a href="#AlbumsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="mdi mdi-album"></i>
+                        Albums
+                    </a>
+                    <ul class="collapse list-unstyled" id="AlbumsSubmenu">
+                        <li>
+                            <a href="/AddAlbum">Add Album</a>
+                        </li>
+                        <li>
+                            <a href="/ListAlbum">List Album</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                     <a href="#MenusSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-book"></i>
+                        Menus
+                    </a>
+                    <ul class="collapse list-unstyled" id="MenusSubmenu">
+                        <li>
+                            <a href="/AddMenu">Add Menu</a>
+                        </li>
+                        <li>
+                            <a href="/ListMenu">List Menu</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                     <a href="#DirectionsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-arrow-right"></i>
+                        Directions
+                    </a>
+                    <ul class="collapse list-unstyled" id="DirectionsSubmenu">
+                        <li>
+                            <a href="/AddDirection">Add Direction</a>
+                        </li>
+                        <li>
+                            <a href="/ListDirections">List Directions</a>
+                        </li>
+                    </ul>
+                </li>
+                   <li>
+                     <a href="#LanguagesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-language"></i>
+                        Languages
+                    </a>
+                    <ul class="collapse list-unstyled" id="LanguagesSubmenu">
+                        <li>
+                            <a href="/AddLanguage">Add Language</a>
+                        </li>
+                        <li>
+                            <a href="/ListLanguage">List Languages</a>
+                        </li>
+                    </ul>
+                </li>
+                     <li>
+                     <a href="#NewsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class=" mdi mdi-newspaper"></i>
+                        News
+                    </a>
+                    <ul class="collapse list-unstyled" id="NewsSubmenu">
+                        <li>
+                            <a href="/AddNews">Add News</a>
+                        </li>
+                        <li>
+                            <a href="/ListNews">List News</a>
+                        </li>
+                    </ul>
+                </li>
+                  <li>
+                     <a href="#WidgetsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-plug"></i>
+                        Widgets
+                    </a>
+                    <ul class="collapse list-unstyled" id="WidgetsSubmenu">
+                        <li>
+                            <a href="/AddWidget">Add Widget</a>
+                        </li>
+                        <li>
+                            <a href="/ListWidget">List Widgets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-infosp">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                               <i class="fa fa-key"></i><asp:Button runat="server" ID="Logoutbtn" class="nav-link" Text="Logout"></asp:Button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+                <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
+    </div>
+    </form>
+          <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //Calling Toogle
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+                //Calling Datatable
+                $('#Table').DataTable();
+                CKEDITOR.replace('txtCKEditor');
+            });
+        </script>
+</body>
+</html>
